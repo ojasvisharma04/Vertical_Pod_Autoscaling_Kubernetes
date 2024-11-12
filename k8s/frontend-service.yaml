@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chatroom-ui
+spec:
+  type: LoadBalancer
+  selector:
+    app: chatroom-ui
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

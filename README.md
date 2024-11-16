@@ -65,6 +65,33 @@ The backend is built using **Spring Boot**, facilitating robust server-side logi
    http://localhost:5173
    ```
 
+### Building and Pushing Docker Images to DockerHub
+
+1. Build Docker images for both frontend and backend:
+   - Backend:
+     ```
+     docker build -t your-dockerhub-username/chatroom-backend .
+     ```
+   - Frontend:
+     ```
+     docker build -t your-dockerhub-username/chatroom-ui .
+     ```
+
+2. Log in to DockerHub:
+   ```
+   docker login
+   ```
+
+3. Push the images to DockerHub:
+   - Backend:
+     ```
+     docker push your-dockerhub-username/chatroom-backend
+     ```
+   - Frontend:
+     ```
+     docker push your-dockerhub-username/chatroom-ui
+     ```
+
 ### Kubernetes Deployment
 
 #### Prerequisites
@@ -116,3 +143,4 @@ Check the status of your pods and VPA configuration:
    ```
 
 ## Screenshots
+

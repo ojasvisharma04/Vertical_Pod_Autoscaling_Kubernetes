@@ -125,7 +125,7 @@ To access the application via Minikube, expose the services:
 
 - **Backend**:
   ```
-  minikube service chatroom-backend --url
+  kubectl port-forward svc/chatroom-backend 8080:8080
   ```
 
 ### Verification
@@ -143,4 +143,20 @@ Check the status of your pods and VPA configuration:
    ```
 
 ## Screenshots
+- **Login Page**: 
+  
+  ![Login Page](img/1.gif)
+
+- **Chatroom**:   
+
+  ![Login Page](img/2.png)
+
+- **Multimedia support**: 
+
+  ![Multimedia support](img/4.png)
+
+- **Private chat**: 
+
+  ![Private chat](img/3.png)
+
 

@@ -3,6 +3,8 @@ package com.chatroomserver.chatroonbackend.controller;
 import com.chatroomserver.chatroonbackend.model.Message;
 
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -15,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 public class ChatController {
 
+    @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
-
 
     @MessageMapping("/message")
     @SendTo("/chatroom/public")
@@ -30,5 +32,4 @@ public class ChatController {
         simpMessagingTemplate.convertAndSendToUser(message.getReceiverName(),"/private",message);
         return message;
     }
-
 }
